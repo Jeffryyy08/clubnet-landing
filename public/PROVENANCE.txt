@@ -1,0 +1,1 @@
+brand/isotipo.jpg: original aportado por el usuario, copia sin modificar de outputs/clubnet-dataentry/public/brand/isotipo.jpg. No es una recreación generada. Las propuestas de .impeccable/mocks son referencias de diseño y no se sirven ni usan como imágenes de la web.

@@ -1,0 +1,51 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "course": true,
+      "faq": true,
+      "anchors": true,
+      "consoleErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "course": true,
+      "faq": true,
+      "anchors": true,
+      "consoleErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "course": true,
+      "faq": true,
+      "anchors": true,
+      "consoleErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "course": true,
+      "faq": true,
+      "anchors": true,
+      "consoleErrors": [],
+      "externalRequests": []
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "course": true,
+      "faq": true,
+      "anchors": true,
+      "consoleErrors": [],
+      "externalRequests": []
+    }
+  ],
+  "noJavaScript": true,
+  "skipLink": true
+}

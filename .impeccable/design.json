@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T00:00:00-06:00",
+  "title": "Design System: ClubNet San Carlos",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {"name":"interaction-ease","value":"cubic-bezier(.16,1,.3,1)","purpose":"Button and course hover transitions."},
+      {"name":"mark-entrance","value":"scale .96 to 1, 1.15s, expo.out","purpose":"One GSAP entrance; skipped with reduced motion."},
+      {"name":"title-entrance","value":"y 12 to 0, .95s, expo.out","purpose":"One title entrance; skipped with reduced motion."}
+    ],
+    "breakpoints": [
+      {"name":"mobile","value":"700px"},
+      {"name":"tablet-max","value":"1100px"},
+      {"name":"wide","value":"1700px"}
+    ]
+  },
+  "components": [
+    {
+      "name":"Primary action","kind":"button","refersTo":"button-primary",
+      "description":"Navy link action on a light surface.",
+      "html":"<a class=\"ds-primary\" href=\"#contacto\">Consultar matrícula</a>",
+      "css":".ds-primary{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 27px;background:#1B3457;color:#FFFFFF;border-radius:14px;font:900 18px/1.3 'Nunito Sans',sans-serif;text-decoration:none;transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s}.ds-primary:hover{transform:translateY(-3px);background:#274970}.ds-primary:active{transform:translateY(0)}.ds-primary:focus-visible{outline:3px solid #1B3457;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name":"Contact action","kind":"button","refersTo":"button-contact",
+      "description":"Yellow telephone action, used on navy.",
+      "html":"<a class=\"ds-contact\" href=\"tel:+50689086996\">Llamar al 8908-6996</a>",
+      "css":".ds-contact{display:inline-flex;min-height:50px;align-items:center;padding:13px 27px;background:#FFE14D;color:#1B3457;border-radius:14px;font:900 18px/1.3 'Nunito Sans',sans-serif;text-decoration:none}.ds-contact:hover{background:#FFFFFF}.ds-contact:focus-visible{outline:3px solid #FFFFFF;outline-offset:6px}"
+    },
+    {
+      "name":"Course link","kind":"custom","refersTo":"course-excel",
+      "description":"Large course selector with a consistent SVG arrow.",
+      "html":"<a class=\"ds-course\" href=\"#excel\">Excel<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css":".ds-course{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:12px 32px;min-height:86px;background:#FFFFFF;color:#1B3457;border-radius:24px;font:900 40px/1.3 'Nunito Sans',sans-serif;text-decoration:none;transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-course svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.ds-course:hover{transform:translateY(-5px)}.ds-course:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-course{transition:none}}"
+    },
+    {
+      "name":"Navigation","kind":"nav","description":"Visible navigation, including on mobile.",
+      "html":"<nav class=\"ds-nav\" aria-label=\"Secciones\"><a href=\"#cursos\">Cursos</a><a href=\"#proyecto\">Cómo funciona</a><a href=\"#contacto\">Encontranos</a></nav>",
+      "css":".ds-nav{display:flex;gap:24px;color:#1B3457;font:700 16px/1.55 'Nunito Sans',sans-serif}.ds-nav a{color:inherit;text-decoration:none;padding:10px 0}.ds-nav a:hover{text-decoration:underline;text-underline-offset:5px}.ds-nav a:focus-visible{outline:3px solid currentColor;outline-offset:6px}"
+    },
+    {
+      "name":"Disclosure","kind":"custom","description":"Native accessible details for questions and courses.",
+      "html":"<details class=\"ds-disclosure\"><summary>¿Los cursos tienen costo?</summary><p>La formación de ClubNet es gratuita. Consultá las condiciones con el equipo.</p></details>",
+      "css":".ds-disclosure{color:#1B3457;border-bottom:1px solid #c9d1db;font:400 18px/1.55 'Nunito Sans',sans-serif}.ds-disclosure summary{cursor:pointer;padding:18px 0;min-height:72px;font-weight:700}.ds-disclosure summary:hover{text-decoration:underline}.ds-disclosure summary:focus-visible{outline:3px solid currentColor;outline-offset:6px}.ds-disclosure p{padding-bottom:26px}"
+    }
+  ],
+  "narrative": {
+    "northStar":"El isotipo original da la bienvenida",
+    "overview":"Professional, friendly, playful and creative, with generous white space, rounded heavy lettering and solid color fields. Preserve the supplied original isotipo and the restrained visual language confirmed for proposal C.",
+    "keyCharacteristics":["Original isotipo, unchanged in color and proportions.","Navy reading color, white space and flat brand-color fields.","Solid rounded controls and a single restrained entrance."],
+    "rules":[],
+    "dos":["Do preserve the original isotipo, exact brand palette and locally bundled rounded type.","Do keep focus visible and native links and disclosures operable.","Do preserve reduced-motion handling and the single restrained entrance."],
+    "donts":["Don't introduce shadows, gradients or invented components into this documented system.","Don't treat superseded hero declarations as the final responsive values.","Don't turn this landing's approved composition into a universal layout requirement."]
+  }
+}

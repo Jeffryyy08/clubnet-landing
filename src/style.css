@@ -80,3 +80,14 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
  .socials a{min-height:44px}
 }
 @media(prefers-reduced-motion:reduce){.button:hover,.course-link:hover,.gallery-control:hover,.hero-message .hero-action:hover{transform:none}}
+
+/* Motion polish: one owner per property keeps the handoff from feeling cut. */
+.motion-ready{opacity:1;transform:none;transition:opacity .56s var(--ease),transform .68s var(--ease)}
+.motion-ready.is-visible{opacity:1;transform:none;will-change:auto}
+@media(prefers-reduced-motion:no-preference){.js .motion-ready:not(.is-visible){opacity:0;transform:translate3d(0,16px,0);will-change:opacity,transform}}
+@media(prefers-reduced-motion:reduce){.motion-ready,.motion-ready.is-visible,.js .motion-ready:not(.is-visible){opacity:1!important;transform:none!important;transition:none!important;will-change:auto}.button:hover svg,.course-link:hover svg{transform:none}}
+
+/* The gallery crossfades via CSS only; Anime.js no longer competes with this transition. */
+.gallery-slide{transition:opacity .56s var(--ease),transform .72s var(--ease),visibility 0s linear .56s}
+.button svg,.course-link svg{transition:transform .2s var(--ease)}
+@media (hover:hover) and (pointer:fine){.button:hover svg,.course-link:hover svg{transform:translateX(3px)}}

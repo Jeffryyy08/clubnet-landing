@@ -14,4 +14,4 @@ Profesional, amigable, divertida y creativa. Paleta exacta: #1B3457, #19BBA8, #F
 Ver INVESTIGACION.md. Formación gratuita, sede Plaza San Carlos, ejecutor Fundación Curridabat. No se han confirmado cupos ni fechas actuales. No inventar resultados, testimonios, acreditaciones ni alianzas específicas de la sede.
 
 ## Delivery
-El usuario aprobó únicamente C y pidió construirla. Mantener «Encendé tus ganas de aprender», sin elementos de A. Implementación elegida: HTML semántico, CSS, Vite y GSAP con fuentes locales; decisiones técnicas de implementación, no preferencias declaradas del usuario. Preservar privacidad: no publicar el formulario de matrícula con datos personales.
+El usuario aprobó únicamente C y pidió construirla. Mantener «Encendé tus ganas de aprender», sin elementos de A. Implementación elegida: HTML semántico, CSS, Vite y Anime.js con fuentes locales; las transiciones de interacción y del carrusel se mantienen en CSS para evitar conflictos y cortes. Preservar privacidad: no publicar el formulario de matrícula con datos personales.

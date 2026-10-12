@@ -6,7 +6,7 @@ THESIS: el isotipo original da la bienvenida; no un hero comercial dividido ni u
 OWN-WORLD: blanco amplio, marino para lectura, naranja para cursos, amarillo y turquesa para selección. Sans redondeada de peso alto; controles sólidos sin brillo.
 STORY: reconocer formación gratuita en San Carlos, explorar intereses, comprender el proyecto y consultar matrícula.
 FIRST VIEWPORT: marca arriba izquierda y navegación derecha; isotipo central monumental; título y CTA dentro del espacio blanco; oferta abajo izquierda y comunidad abajo derecha. Franja naranja de cursos visible después. Isotipo original rectangular sin retocar, ajustando sus márgenes internos mediante tamaño y posición, no recortes del comp.
-FORM: composición C aprobada; modo D de anti-ai adaptado a la restricción minimalista explícita. Sin seed automático: lanzador falló con cache_directory_failed. Se preserva aprobación manual. Movimiento único de entrada con GSAP, discreto, sin giro del logo; controles funcionales y reduced-motion.
+FORM: composición C aprobada; modo D de anti-ai adaptado a la restricción minimalista explícita. Sin seed automático: lanzador falló con cache_directory_failed. Se preserva aprobación manual. Movimiento único de entrada con Anime.js, discreto, sin giro del logo; CSS mantiene las transiciones de estado y reduced-motion.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Medición manual de referencia 1536×1024

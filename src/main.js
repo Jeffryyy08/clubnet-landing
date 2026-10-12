@@ -53,6 +53,7 @@ if (gallerySlides.length && galleryDots && gallery) {
     dot.addEventListener('click', () => showGallerySlide(index));
     galleryDots.append(dot);
   });
+  let paused = false;
   const showGallerySlide = (nextIndex) => {
     galleryIndex = (nextIndex + gallerySlides.length) % gallerySlides.length;
     gallerySlides.forEach((slide, index) => {
@@ -61,7 +62,6 @@ if (gallerySlides.length && galleryDots && gallery) {
       slide.setAttribute('aria-hidden', active ? 'false' : 'true');
       galleryDots.children[index].classList.toggle('is-active', active);
       galleryDots.children[index].setAttribute('aria-pressed', active ? 'true' : 'false');
-      if (active && !reducedMotion) animate(slide, { opacity: [0, 1], duration: 520, ease: 'out(4)' });
     });
     restartGalleryTimer();
   };
@@ -75,7 +75,6 @@ if (gallerySlides.length && galleryDots && gallery) {
   gallery.addEventListener('mouseleave', restartGalleryTimer);
   gallery.addEventListener('focusin', () => window.clearInterval(galleryTimer));
   gallery.addEventListener('focusout', restartGalleryTimer);
-  let paused = false;
   const pause = document.createElement('button');
   pause.type = 'button';
   pause.className = 'gallery-pause';
@@ -90,18 +89,12 @@ if (gallerySlides.length && galleryDots && gallery) {
   restartGalleryTimer();
 }
 
-// Motion is explanatory: it reveals the next piece of the story without moving the content users read.
-const fadeIn = (targets, options = {}) => {
-  if (reducedMotion) return;
-  animate(targets, { opacity: [0, 1], translateY: [18, 0], duration: 650, ease: 'out(4)', ...options });
-};
-
 if (!reducedMotion) {
   animate('.hero-mark', { opacity: [0, 1], scale: [.97, 1], duration: 900, ease: 'out(4)' });
   // Keep the hero center's CSS translateX intact; animating its transform would undo centering.
   animate('.hero-center', { opacity: [0, 1], duration: 720, delay: 180, ease: 'out(4)' });
   animate('.hero-center h1 span', { opacity: [0, 1], translateY: [10, 0], duration: 520, delay: stagger(80, { start: 260 }), ease: 'out(4)' });
-  fadeIn('.hero-location, .hero-message', { delay: stagger(90, { start: 300 }), duration: 560 });
+  animate('.hero-location, .hero-message', { opacity: [0, 1], translateY: [10, 0], duration: 560, delay: stagger(90, { start: 300 }), ease: 'out(4)' });
 }
 
 document.querySelectorAll('.section, .courses, .footer').forEach((section) => section.classList.add('motion-ready'));
@@ -109,23 +102,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add('is-visible');
-    fadeIn(entry.target, { duration: 600 });
-    const children = [...entry.target.children].filter((child) => !child.classList.contains('hero-mark'));
-    if (!reducedMotion && children.length > 1) animate(children, { opacity: [0, 1], translateY: [12, 0], duration: 520, delay: stagger(65), ease: 'out(4)' });
     observer.unobserve(entry.target);
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 document.querySelectorAll('.motion-ready').forEach((section) => revealObserver.observe(section));
-
-// Hover motion is limited to the pointer: touch users keep the same stable layout.
-if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion) {
-  document.querySelectorAll('.course-link, .button').forEach((element) => {
-    element.addEventListener('pointerenter', () => animate(element, { scale: 1.025, duration: 180, ease: 'out(3)' }));
-    element.addEventListener('pointerleave', () => animate(element, { scale: 1, duration: 180, ease: 'out(3)' }));
-    const icon = element.querySelector('svg');
-    if (icon) {
-      element.addEventListener('pointerenter', () => animate(icon, { rotate: 12, duration: 180, ease: 'out(3)' }));
-      element.addEventListener('pointerleave', () => animate(icon, { rotate: 0, duration: 180, ease: 'out(3)' }));
-    }
-  });
-}

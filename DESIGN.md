@@ -179,7 +179,7 @@ Course links open their matching details on click and valid initial/hashchange n
 
 Button transforms run for .25s with cubic-bezier(.16,1,.3,1); background changes run for .2s with default CSS ease. Course hover runs for .3s with the same custom curve. Plus rotation runs for .2s with default ease.
 
-Anime.js handles a short first-load reveal for the isotipo and hero copy, one-time fade/translate reveals for sections entering the viewport, and pointer-only micro-scale feedback on buttons and course links. Motion stays on opacity and transform, with short ease-out timings and no perpetual loop.
+Anime.js handles the short first-load reveal for the isotipo and hero copy. CSS owns the one-time fade/translate reveals for sections entering the viewport, the gallery crossfade, and pointer-only icon feedback so no two animation systems write the same `transform` or `opacity` at once. Motion stays on compositor-friendly properties, with short ease-out timings and no perpetual loop.
 
 Reduced motion disables CSS transitions and animations, restores automatic scrolling, and skips the Anime.js entrance and scroll reveals. Hover transforms are also skipped by the pointer-motion guard.
 
